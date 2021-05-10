@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class EjemploArreglos {
     public static void main(String[] args) {
         String[] productos = new String[7];
@@ -9,6 +11,9 @@ public class EjemploArreglos {
         productos[5]= "Chromecast 4ta generacion";
         productos[6]= "Bicicleta Oxford";
 
+         // Importa arrays de java , util y el metodo sort ordena el arreglo
+        Arrays.sort(productos);
+
         System.out.println("productos = " + productos[0]);
         System.out.println("productos = " + productos[1]);
         System.out.println("productos = " + productos[2]);
@@ -19,11 +24,6 @@ public class EjemploArreglos {
 
 
 
-        System.out.println("productos = " + productos[0]);
-        System.out.println("productos = " + productos[1]);
-        System.out.println("productos = " + productos[2]);
-        System.out.println("productos = " + productos[3]);
-
 
         int[] numeros = new int[4];
 
@@ -33,6 +33,7 @@ public class EjemploArreglos {
         numeros[3]=4;
         //numeros[4]=5;
 
+        Arrays.sort(numeros);
         int i = numeros[0];
         int j = numeros[1];
         int k = numeros[2];

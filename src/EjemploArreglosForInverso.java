@@ -1,0 +1,44 @@
+import java.util.Arrays;
+
+public class EjemploArreglosForInverso {
+    public static void main(String[] args) {
+
+
+        String productos[] = {"Kingston Pendrive 64GB","Samsug galaxy",
+                "Disco Duro .....","Asus Notebook","Macbook air","Chromecast 4ta generacion",
+                "Bicicleta Oxford"};
+        //
+        // String[] productos = new String[7];
+        int total = productos.length;
+//        productos[0]= "Kingston Pendrive 64GB";
+//        productos[1]= "Samsug galaxy";
+//        productos[2]= "Disco Duro .....";
+//        productos[3]= "Asus Notebook";
+//        productos[4]= "Macbook air";
+//        productos[5]= "Chromecast 4ta generacion";
+//        productos[6]= "Bicicleta Oxford";
+
+        Arrays.sort(productos);
+        System.out.println(" === Usando for ===");
+        for (int i = 0; i < total ; i++) {
+            System.out.println(" Para indice "+ i +": "+productos[i]);
+        }
+
+        System.out.println(" === Usando For inverso ===");
+        for (int i = 0; i < total; i++) {
+            System.out.println("Para i =" +(total-1-i)+ "valor: "+ productos[total-1-i]);
+        }
+
+        System.out.println(" === Usando For  inverso 2===");
+        for (int i = total-1; i >= 0; i--) {
+            System.out.println(" para i :" + i+ "valor"+productos[i]);
+        }
+
+
+
+
+
+
+
+    }
+}
