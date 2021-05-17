@@ -20,7 +20,7 @@ public class EjemploHerencia {
         alumno.setNombre("Javier");
         alumno.setApellido("Lagos");
         alumno.setInstitucion("Instituto Nacional");
-        alumno.setNotaMatematico(6.9);
+        alumno.setNotaMatematica(6.9);
         alumno.setNotaHistoria(4.8);
         alumno.setNotaLenguaje(6.1);
         System.out.println(" === Creando la instancia de alumno Internacional======");
@@ -32,7 +32,7 @@ public class EjemploHerencia {
         alumnoInt.setPais("Australia");
         alumnoInt.setInstitucion("Instituto Nacional");
         alumnoInt.setNotaLenguaje(5.5);
-        alumnoInt.setNotaMatematico(6.8);
+        alumnoInt.setNotaMatematica(6.8);
         alumnoInt.setNotaHistoria(4.9);
 
 

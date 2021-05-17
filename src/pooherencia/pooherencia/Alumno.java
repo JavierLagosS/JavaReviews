@@ -29,9 +29,6 @@ public class Alumno  extends Persona {
         this.notaHistoria = notaHistoria;
     }
 
-
-
-
     public String getInstitucion() {
         return institucion;
     }
@@ -40,11 +37,11 @@ public class Alumno  extends Persona {
         this.institucion = institucion;
     }
 
-    public double getNotaMatematico() {
+    public double getNotaMatematica() {
         return notaMatematica;
     }
 
-    public void setNotaMatematico(double notaMatematico) {
+    public void setNotaMatematica(double notaMatematica) {
         this.notaMatematica = notaMatematica;
     }
 
@@ -62,5 +59,25 @@ public class Alumno  extends Persona {
 
     public void setNotaHistoria(double notaHistoria) {
         this.notaHistoria = notaHistoria;
+    }
+
+    @Override
+    public String saludar(){
+        return super.saludar() + " soy un alumno y mi nombre es " +getNombre();
+    }
+
+    public double calcularPromedio(){
+        return (notaHistoria+notaLenguaje+notaMatematica)/3;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+
+                "\ninstitucion='" + institucion + '\'' +
+                ", notaMatematica=" + notaMatematica +
+                ", notaLenguaje=" + notaLenguaje +
+                ", notaHistoria=" + notaHistoria+
+                ", promedio=" + this.calcularPromedio()
+                ;
     }
 }

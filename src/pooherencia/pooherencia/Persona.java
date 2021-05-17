@@ -50,4 +50,15 @@ public class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String saludar(){
+        return "Hola que tal! ";
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", email='" + email + '\'' + this.saludar();
+    }
 }
