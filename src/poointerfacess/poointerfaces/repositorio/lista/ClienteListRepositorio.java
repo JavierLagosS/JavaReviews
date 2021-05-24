@@ -1,42 +1,13 @@
-package poointerfacess.poointerfaces.repositorio;
+package poointerfacess.poointerfaces.repositorio.lista;
 
 import poointerfacess.poointerfaces.modelo.Cliente;
+import poointerfacess.poointerfaces.repositorio.AbstractaListRepositorio;
+import poointerfacess.poointerfaces.repositorio.Direccion;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio  implements OrdenablePaginableCrudRepositorio{
-
-    private List<Cliente> dataSource;
-
-    // se crea un constructor vacio solo para
-    // Inicializar el arrayList
-    public ClienteListRepositorio() {
-        this.dataSource = new ArrayList<>();
-    }
-
-    @Override
-    public List<Cliente> listar() {
-        return dataSource;
-    }
-
-    @Override
-    public Cliente porId(Integer id) {
-        Cliente resultado = null;
-        for (Cliente cli: dataSource){
-            if (cli.getId()!=null && cli.getId().equals(id)){
-                resultado = cli;
-                break;
-            }
-        }
-        return resultado;
-    }
-
-    @Override
-    public void crear(Cliente cliente) {
-        this.dataSource.add(cliente);
-
-    }
+public  class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> {
 
     @Override
     public void editar(Cliente cliente) {
@@ -45,11 +16,6 @@ public class ClienteListRepositorio  implements OrdenablePaginableCrudRepositori
         c.setApellido(cliente.getApellido());
     }
 
-    @Override
-    public void eliminar(Integer id) {
-        this.dataSource.remove(this.porId(id));
-
-    }
 
     @Override
     public List<Cliente> listar(String campo, Direccion dir) {
@@ -68,10 +34,7 @@ public class ClienteListRepositorio  implements OrdenablePaginableCrudRepositori
         return listaOrdenada;
     }
 
-    @Override
-    public List<Cliente> listar(int desde, int hasta) {
-        return dataSource.subList(desde,hasta);
-    }
+
     public static int ordenar(String campo,Cliente a, Cliente b) {
         int resultado = 0;
         switch (campo) {
@@ -88,8 +51,4 @@ public class ClienteListRepositorio  implements OrdenablePaginableCrudRepositori
         return resultado;
     }
 
-    @Override
-    public int count() {
-        return this.dataSource.size();
-    }
 }

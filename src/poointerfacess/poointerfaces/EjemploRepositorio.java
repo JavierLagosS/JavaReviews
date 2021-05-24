@@ -2,12 +2,13 @@ package poointerfacess.poointerfaces;
 
 import poointerfacess.poointerfaces.modelo.Cliente;
 import poointerfacess.poointerfaces.repositorio.*;
+import poointerfacess.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
 public class EjemploRepositorio {
     public static void main(String[] args) {
-        OrdenablePaginableCrudRepositorio repositorio = new ClienteListRepositorio();
+        OrdenablePaginableCrudRepositorio<Cliente> repositorio = new ClienteListRepositorio();
 
         repositorio.crear(new Cliente("Jano","Perez"));
         repositorio.crear(new Cliente("Bea","Gonzales"));
